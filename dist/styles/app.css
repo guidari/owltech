@@ -1,0 +1,22 @@
+body{
+    background-image: url(../images/wallpaper_2.png) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.row{
+    margin:0px !important;
+}
+
+.listaRegistro { 
+    margin-top: 10px;
+    border-bottom: 1px solid;
+}
+
+.card-option{
+    margin-top: 15%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10% auto;
+}

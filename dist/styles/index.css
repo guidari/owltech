@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  position: fixed !important;
+  width: 100vw !important;
+  z-index: 999999 !important;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.21);
+}
+
+.navbar-brand {
+  margin-left: 220px !important;
+}
+
+.navbar-collapse {
+  margin-left: 40px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: "Ubuntu", sans-serif;
+}
+.title {
+  font-size: 30px;
+}
+
+.container-fluid {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.section-1 {
+  overflow: hidden;
+  widows: 100%;
+  height: 100vh;
+  background-image: url(../images/wallpaper_1.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.title-page {
+  color: #fff;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+
+.title-page p:nth-child(1) {
+  font-size: 40px;
+}
+
+.title-page p:nth-child(2) {
+  font-size: 70px;
+  margin-top: -30px;
+}
+
+.section-2 {
+  widows: 100%;
+  height: auto;
+  background-color: #153d57;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-size: 16px;
+}
+.title-sobre {
+  font-size: 30px;
+  padding: 60px 30px 0px 30px !important;
+}
+.txt-sobre {
+  padding: 0px 30px 60px 30px !important;
+}
+
+.section-3 {
+  widows: 100%;
+  height: auto;
+  background-color: #e9ecef;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-size: 19px;
+  padding: 20px !important;
+}
+.section-3 .container {
+  background-color: #092639;
+  border-radius: 5px;
+}
+.section-3 .container div {
+  padding: 10px;
+}
+
+.btn-home {
+  font-size: 22px !important;
+  margin-left: 30px;
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+.btn:hover {
+  background: #fff !important;
+  color: #092639 !important;
+  border: 2px solid #fff !important;
+}
+
+.section-4 {
+  overflow: hidden;
+  widows: 100%;
+  height: 70vh;
+  background-image: url(../images/wallpaper_2.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.box-produto {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+.text-produto {
+  color: #295542;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.section-5 {
+  background-color: #e9ecef;
+}
+.section-5 .container {
+  padding: 20px !important;
+}
+
+.box-contato {
+  padding-bottom: 60px;
+}
+
+.Copyright {
+  font-size: 13px;
+  color: #000;
+}
+
+/* EQUIPE */
+.grupo_img {
+  margin: 0 5%;
+}
+.img_grupo img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .img_grupo img {
+    border-radius: 50%;
+    width: 100%;
+    height: 150px;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .img_grupo img {
+    border-radius: 50%;
+    width: 60%;
+    height: 200px;
+    margin: 0 20%;
+  }
+  .video_robo_cup {
+    width: 100%;
+    padding-right: 0;
+  }
+  .video_atom {
+    width: 100%;
+    height: 250px !important;
+  }
+  .dimensao {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-top: 2%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-brand {
+    margin-left: 30px !important;
+  }
+
+  .navbar-collapse {
+    margin-left: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .section-1 {
+    overflow: hidden;
+    widows: 100%;
+    height: 600px;
+  }
+
+  .title-page p:nth-child(1) {
+    font-size: 30px;
+  }
+
+  .title-page p:nth-child(2) {
+    font-size: 40px;
+    margin-top: -30px;
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OwlTech</title>
+
+        <link rel="icon" type="image/jpg" href="images/owl.png"/>
+        <link rel="stylesheet" href="styles/app.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/responsive.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="../node_modules/jquery/jquery-3.5.1.slim.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Cabeçalho -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-flex justify-content-between">
+
+            <a class="navbar-brand ml-5" href="index.html">
+                <svg class="bi bi-arrow-left-short" width="2em" height="2em" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </a>
+
+            <a class="navbar-brand  d-flex justify-content-center" href="index.html"><img src="images/LogoSIS.png" height="40px"></a>
+            <h3 class="mr-5">Controle de Pacientes</h3>
+
+        </nav>
+
+        <!-- APP -->
+        <div class="container-fluid" id="container" style="display: none;">
+
+            <div class="row d-flex justify-content-around" style="padding-top: 50px;">
+
+                <div class="card mt-5  col-md-4 col-sm-12" id="cadastrarPaciente">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastrar Paciente</h5>
+                        <form action="">
+                            <input type="text" id="nome" class="form-control inputCadastro mt-4" placeholder="Nome" required="required">
+                            <input type="number" id="idade" class="form-control inputCadastro mt-2" placeholder="Idade" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required="required">
+                            <input type="email" id="email" class="form-control inputCadastro mt-2" placeholder="e-mail" required="required">
+                            <input type="number" id="cpf" class="form-control inputCadastro mt-2" placeholder="CPF" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required="required">
+                            <p id="sucesso" style="color: green;"></p>
+                            <p id="erroCadastro" style="color: red;"></p>
+                            <button type="submit" id="cadastrar" class="btn btn-primary btn-card" disabled="disabled">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-5  col-md-4 col-sm-12" id="atenderPaciente">
+                    <div class="card-body">
+                        <h5 class="card-title">Atender Paciente</h5>
+                        <span id="erroPaciente" style="color: red;"></span>
+
+                        <div id="perguntas" style="display: none;">
+
+                            <p>
+                                <strong>Nome:</strong>
+                                <span id="pacienteChamado"></span></p>
+                            <p>
+                                <strong>CPF:</strong>
+                                <span id="cpfChamado"></span></p>
+                            <p>
+                                <span id="emailChamado" style="display: none;"></span></p>
+                            <p>
+                                <span id="idadeChamado" style="display: none;"></span></p>
+
+                            <span>- Tosse</span><br>
+                            <span>- Dor de Garganta</span><br>
+                            <span>- Febre</span><br>
+                            <span>- Cansaço</span><br>
+                            <span>- Dificuldade respiratória</span><br>
+                            <p class="mt-3">Você apresente 3 ou mais sintomas descritos acima?</p>
+                            <button id="sim" class="btn btn-primary btn-card mt-2">Sim</button>
+                            <button id="nao" class="btn btn-primary btn-card mt-2">Não</button>
+                        </div>
+                        <br>
+                        <a href="#" id="chamar" class="btn btn-primary btn-card mt-2">Chamar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-around">
+                <div class="card mt-5  col-md-4 col-sm-12" id="liberarPaciente">
+                    <div class="card-body">
+                        <h5 class="card-title">Liberar Paciente</h5>
+                        <input type="text" id="cpfLiberar" class="form-control" placeholder="CPF">
+                        <p id="consultadoPaciente"></p>
+                        <button id="alta" class="btn btn-primary btn-card">Alta</button>
+                        <button id="obito" class="btn btn-primary btn-card">Óbito</button>
+                    </div>
+                </div>
+
+                <div class="card mt-5 col-md-4 col-sm-12" id="consultar_Paciente">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultar Paciente</h5>
+                        <input id="cpfConsultar" type="text" class="form-control" placeholder="CPF">
+
+                        <div id="divConsulta" style="display: none;">
+                            <p>
+                                <strong>Nome:
+                                </strong>
+                                <span id="nomeConsultado"></span>
+                            </p>
+                            <p>
+                                <strong>CPF:
+                                </strong>
+                                <span id="cpfConsultado"></span>
+                            </p>
+                            <p>
+                                <strong>Status:
+                                </strong>
+                                <span id="statusConsultado"></span>
+                            </p>
+                        </div>
+                        <p id="cpfNaoEncontrado" style="color: red; display: none;"></p>
+                        <p></p>
+                        <button id="consultarPaciente" class="btn btn-primary btn-card">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fecha cards -->
+            <div class="row d-flex justify-content-around mb-5">
+
+                <div class="card mt-5 col-md-4 col-sm-12 consultas">
+                    <div class="card-body">
+                        <h5 class="card-title">Registro de Pacientes no Hospital</h5>
+                        <div id="registroPacientes"></div>
+                    </div>
+                </div>
+
+                <div class="card mt-5 col-md-4 col-sm-12 consultas">
+                    <div class="card-body">
+                        <h5 class="card-title">Pacientes Internados</h5>
+                        <span>Leitos Disponíveis:
+                        </span>
+                        <strong id="leitosDisponiveis"></strong>
+                        <br>
+                        <div id="leitosOcupados"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="card-option">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="images/family.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Testar como familiar</h5>
+                    <p class="card-text">Entrando como um familiar você pode consultar o status de um paciente através do CPF.</p>
+                    <a id="entrar_familiar" href="#" class="btn btn-primary">Testar</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="images//doctor.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Testar como médico</h5>
+                    <p class="card-text">Entrando como médico você pode acompanhar todo o processo de triagem de um paciente.</p>
+                    <a id="entrar_medico" href="#" class="btn btn-primary">Testar</a>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" defer="defer" src="scripts/main.js"></script>
+    </body>
+
+</html>
