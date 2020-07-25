@@ -1,0 +1,7 @@
+@media (max-width: 900px) {
+
+    #cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
